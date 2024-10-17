@@ -1,13 +1,7 @@
-*{
-    //margin: 0;
-    //padding: 0;
-    box-sizing: border-box;
-}
-
 .container{
     height: 100vh;
     width: 100%;
-    background-color:teal;
+    background-color:rgb(17, 167, 167);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -35,7 +29,7 @@ h5{
 .sci-calc{
     background-color: black;
     padding: 2%;
-    border-radius: 10%;
+    border-radius: 12%;
 }
 
 .sci-calc form input{
@@ -53,7 +47,7 @@ h5{
 form .screen{
     display: flex;
     justify-self: flex-end;
-    margin: 2px 2;
+    margin: 2px;
 }
 
 form .screen input{
@@ -61,4 +55,5 @@ form .screen input{
     flex: 1;
     height: 70px;
     border-radius: 10px;
+    border-style: dotted;
 }
