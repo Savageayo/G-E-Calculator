@@ -1,38 +1,38 @@
-.container{
+.container {
     height: 100vh;
     width: 100%;
-    background-color:rgb(17, 167, 167);
+    background-color: rgb(17, 167, 167);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-h1{
+h1 {
     font-size: 40px;
     color: aquamarine;
     margin-top: 0px;
 }
 
-h3{
+h3 {
     color: azure;
     padding-left: 45%;
 }
 
-h5{
+h5 {
     padding-left: 64%;
     font-family: cursive;
     font-style: italic;
     margin-top: -20px;
-    color:aquamarine
+    color: aquamarine;
 }
 
-.sci-calc{
+.sci-calc {
     background-color: black;
     padding: 2%;
     border-radius: 12%;
 }
 
-.sci-calc form input{
+.sci-calc form input {
     border: 0px;
     outline: 0px;
     width: 16%;
@@ -44,16 +44,21 @@ h5{
     height: 33px;
 }
 
-form .screen{
+form .screen {
     display: flex;
     justify-self: flex-end;
     margin: 2px;
 }
 
-form .screen input{
+form .screen input {
     text-align: right;
     flex: 1;
     height: 70px;
     border-radius: 10px;
     border-style: dotted;
+    font-size: 28px;
+}
+
+input:hover {
+    background-color: aqua;
 }

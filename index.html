@@ -5,87 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>G&E Scientific Calculator</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
 </head>
-
 <body>
-
-
     <div class="container">
-        
         <div class="sci-calc">
-        <h1>G&E</h1>
-        <h3>Arithmetic made easy</h3>
-        <h5>Made In Nigeria.</h5>
+            <h1>G&E</h1>
+            <h3>Arithmetic made easy</h3>
+            <h5>Made In Nigeria.</h5>
             <form>
                 <div class="screen">
-                    <input type="text" name="screen">
+                    <input type="text" name="screen" id="display" readonly>
                 </div>
-                    <div>
-                        <input type="button" value="SHIFT">
-                        <input type="button" value="ALPHA">
-                        <input type="button" value="RESET">
-                        <input type="button" value="OFF">
-                        <input type="button" value="ON">
-                    </div>
-                    <div>
-                        <input type="button" value="CALC">
-                        <input type="button" value="x^-2" onclick="screen.value += '( )^-2' ">
-                        <input type="button" value="x^-1" onclick="screen.value += '( )^-1' ">
-                        <input type="button" value="logx" onclick="screen.value += 'log( )' ">
-                        <input type="button" value="logx^2" onclick="screen.value += 'log( )^2' ">
-                    </div>
-                    <div>
-                        <input type="button" value="Fac" onclick="screen.value += '!' ">
-                        <input type="button" value="Root" onclick="screen.value += 'root' ">
-                        <input type="button" value="x" onclick="screen.value += 'x' ">
-                        <input type="button" value="log" onclick="screen.value += 'log' ">
-                        <input type="button" value="ln" onclick="screen.value += 'ln' ">
-                    </div>
-                    <div>
-                        <input type="button" value="cot" onclick="screen.value += 'cot' ">
-                        <input type="button" value="hyp" onclick="screen.value += 'hyp' ">
-                        <input type="button" value="sin" onclick="screen.value += 'sin' ">
-                        <input type="button" value="cos" onclick="screen.value += 'cos' ">
-                        <input type="button" value="tan" onclick="screen.value += 'tan' ">
-                    </div>
-                    <div>
-                        <input type="button" value="RCL">
-                        <input type="button" value="(" onclick="screen.value += '(' ">
-                        <input type="button" value=")" onclick="screen.value += ')' ">
-                        <input type="button" value="S=D">
-                        <input type="button" value="M+">
-                    </div>
-                    <div>
-                        <input type="button" value="7" onclick="screen.value += '7' ">
-                        <input type="button" value="8" onclick="screen.value += '8' ">
-                        <input type="button" value="9" onclick="screen.value += '9' ">
-                        <input type="button" value="DEL">
-                        <input type="button" value="AC">
-                    </div>
-                    <div>
-                        <input type="button" value="4" onclick="screen.value += '4' ">
-                        <input type="button" value="5" onclick="screen.value += '5' ">
-                        <input type="button" value="6" onclick="screen.value += '6' ">
-                        <input type="button" value="X" onclick="screen.value += 'X' ">
-                        <input type="button" value="/" onclick="screen.value += '/' ">
-                    </div>
-                    <div>
-                        <input type="button" value="1" onclick="screen.value += '1' ">
-                        <input type="button" value="2" onclick="screen.value += '2' ">
-                        <input type="button" value="3" onclick="screen.value += '3' ">
-                        <input type="button" value="+" onclick="screen.value += '+' ">
-                        <input type="button" value="-" onclick="screen.value += '-' ">
-                    </div>
-                    <div>
-                        <input type="button" value="0" onclick="screen.value += '0' ">
-                        <input type="button" value="." onclick="screen.value += '.' ">
-                        <input type="button" value="10^x" onclick="screen.value += '10^' ">
-                        <input type="button" value="Ans">
-                        <input type="button" value="=">
-                    </div>
+                <div>
+                    <input type="button" value="SHIFT">
+                    <input type="button" value="ALPHA">
+                    <input type="button" value="RESET" onclick="reset()">
+                    <input type="button" value="OFF">
+                    <input type="button" value="ON">
+                </div>
+                <div>
+                    <input type="button" value="CALC">
+                    <input type="button" value="x^-2" onclick="addToScreen('(^-2)')">
+                    <input type="button" value="x^-1" onclick="addToScreen('(^-1)')">
+                    <input type="button" value="logx" onclick="addToScreen('log(')">
+                    <input type="button" value="logx^2" onclick="addToScreen('log(^2)')">
+                </div>
+                <div>
+                    <input type="button" value="Fac" onclick="addToScreen('!')">
+                    <input type="button" value="Root" onclick="addToScreen('sqrt(')">
+                    <input type="button" value="x" onclick="addToScreen('x')">
+                    <input type="button" value="log" onclick="addToScreen('log')">
+                    <input type="button" value="ln" onclick="addToScreen('ln')">
+                </div>
+                <div>
+                    <input type="button" value="cot" onclick="addToScreen('cot')">
+                    <input type="button" value="hyp" onclick="addToScreen('hyp')">
+                    <input type="button" value="sin" onclick="addToScreen('sin')">
+                    <input type="button" value="cos" onclick="addToScreen('cos')">
+                    <input type="button" value="tan" onclick="addToScreen('tan')">
+                </div>
+                <div>
+                    <input type="button" value="RCL">
+                    <input type="button" value="(" onclick="addToScreen('(')">
+                    <input type="button" value=")" onclick="addToScreen(')')">
+                    <input type="button" value="S=D">
+                    <input type="button" value="M+">
+                </div>
+                <div>
+                    <input type="button" value="7" onclick="addToScreen('7')">
+                    <input type="button" value="8" onclick="addToScreen('8')">
+                    <input type="button" value="9" onclick="addToScreen('9')">
+                    <input type="button" value="DEL" onclick="deleteLast()">
+                    <input type="button" value="AC" onclick="reset()">
+                </div>
+                <div>
+                    <input type="button" value="4" onclick="addToScreen('4')">
+                    <input type="button" value="5" onclick="addToScreen('5')">
+                    <input type="button" value="6" onclick="addToScreen('6')">
+                    <input type="button" value="X" onclick="addToScreen('*')">
+                    <input type="button" value="/" onclick="addToScreen('/')">
+                </div>
+                <div>
+                    <input type="button" value="1" onclick="addToScreen('1')">
+                    <input type="button" value="2" onclick="addToScreen('2')">
+                    <input type="button" value="3" onclick="addToScreen('3')">
+                    <input type="button" value="+" onclick="addToScreen('+')">
+                    <input type="button" value="-" onclick="addToScreen('-')">
+                </div>
+                <div>
+                    <input type="button" value="0" onclick="addToScreen('0')">
+                    <input type="button" value="." onclick="addToScreen('.')">
+                    <input type="button" value="10^x" onclick="addToScreen('10^')">
+                    <input type="button" value="Ans">
+                    <input type="button" value="=" onclick="calculate()">
+                </div>
             </form>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
