@@ -11,10 +11,11 @@ function deleteLast() {
     display.value = display.value.slice(0, -1);
 }
 
+
+
 function calculate() {
     const display = document.getElementById('display');
     try {
-        // Evaluate the expression using the Function constructor
         display.value = eval(display.value.replace(/X/g, '*'));
     } catch (error) {
         display.value = 'Error';

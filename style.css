@@ -55,7 +55,6 @@ form .screen input {
     flex: 1;
     height: 70px;
     border-radius: 10px;
-    border-style: dotted;
     font-size: 28px;
 }
 
